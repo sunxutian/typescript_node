@@ -4,7 +4,7 @@ import { Request, RequestHandler, Response, NextFunction } from "express";
 import { IUser } from "../model/IUser";
 import toAsync from "../utility/to";
 
-const dbModel: IDbModel = DbModel.instance();
+const dbModel: IDbModel = DbModel.instance;
 
 export const getAll: RequestHandler = async (req: Request, res: Response, next: NextFunction) => {
     // let result: IUserModel[] = await dbModel.user.find();

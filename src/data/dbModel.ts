@@ -14,7 +14,7 @@ export class DbModel implements IDbModel {
     public static initialize(): void {
         DbModel._model = new DbModel();
     }
-    public static instance(): IDbModel {
+    static get instance(): IDbModel {
         if (!DbModel._model) {
             DbModel.initialize();
         }
