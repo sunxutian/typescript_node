@@ -1,0 +1,6 @@
+::1 - - [01/Jan/2018:20:07:18 +0000] "GET /api/user HTTP/1.1" 304 - "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.84 Safari/537.36"
+::1 - - [01/Jan/2018:20:07:25 +0000] "POST /api/user/search HTTP/1.1" 200 151 "-" "-"
+::1 - - [01/Jan/2018:20:20:42 +0000] "POST /api/user/search HTTP/1.1" 200 151 "-" "-"
+::1 - - [01/Jan/2018:20:21:06 +0000] "POST /api/user/search HTTP/1.1" 200 151 "-" "-"
+[0mPOST /api/user/search [32m200 [0m21.898 ms - 151[0m
+POST /api/user/search 200 151 - 20.082 ms
