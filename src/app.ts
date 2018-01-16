@@ -18,11 +18,11 @@ dotenv.config({
 });
 
 class Server {
-    public app: express.Application;
-
     public static bootstrap(): Server {
         return new Server();
     }
+
+    public app: express.Application;
 
     constructor() {
         this.app = express();
@@ -50,7 +50,7 @@ class Server {
             interval: "1d", // rotate daily
             path: logDirectory
         });
-        this.app.use(logger(enums.MorganLoggerLevel.Tiny, {stream: accessFileStream}));
+        this.app.use(logger(enums.MorganLoggerLevel.Tiny, { stream: accessFileStream }));
 
         mongoose.connect(process.env.MONGODB_URI, { useMongoClient: true }).then(
             () => {
@@ -65,7 +65,7 @@ class Server {
     }
 
     private routes(): void {
-        let appRouter: express.Router = express.Router();
+        const appRouter: express.Router = express.Router();
         appRouter.get("/", homeController.home);
         appRouter.get("/user", userController.getAll);
         appRouter.get("/user/:userName", userController.getOne);
@@ -78,4 +78,5 @@ class Server {
 export const port: any = process.env.PORT || 3000;
 
 const app: express.Application = Server.bootstrap().app;
+
 export default app;
